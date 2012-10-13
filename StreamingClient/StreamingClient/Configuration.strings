@@ -1,0 +1,9 @@
+/* 
+  Configuration.strings
+  StreamingClient
+
+  Created by Jonathan Cottrell on 2012-10-13.
+  Copyright (c) 2012 SpacebarFM Inc. All rights reserved.
+*/
+
+"streamURL" = "http://devimages.apple.com/iphone/samples/bipbop/gear1/prog_index.m3u8";
