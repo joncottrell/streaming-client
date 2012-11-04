@@ -10,6 +10,9 @@
 #import "ViewController.h"
 
 @interface ViewController ()
+{
+    MPMoviePlayerController *_player;
+}
 - (IBAction)play:(id)sender;
 
 @end
@@ -20,23 +23,30 @@
 - (id)init
 {
     self = [super initWithNibName:@"ViewController" bundle:nil];
+    
+    NSURL *url = [NSURL URLWithString:NSLocalizedStringFromTable(@"streamURL", @"Configuration", nil)];
+    _player = [[MPMoviePlayerController alloc] initWithContentURL:url];
+    
+    _player.movieSourceType = MPMovieSourceTypeStreaming;
+
+    _player.view.hidden = YES;
+    _player.shouldAutoplay = YES;
+    
     return self;
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    [self.view addSubview:_player.view];
+
 }
 
 - (IBAction)play:(id)sender
 {
-    NSURL *url = [NSURL URLWithString:NSLocalizedStringFromTable(@"streamURL", @"Configuration", nil)];
 
-    MPMoviePlayerController *player = [[MPMoviePlayerController alloc] initWithContentURL:url];
-    player.movieSourceType = MPMovieSourceTypeStreaming;
-    player.view.hidden = YES;
-    [self.view addSubview:player.view];
-    [player play];
+    [_player play];
 
 }
 @end

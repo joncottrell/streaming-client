@@ -6,4 +6,4 @@
   Copyright (c) 2012 SpacebarFM Inc. All rights reserved.
 */
 
-"streamURL" = "http://devimages.apple.com/iphone/samples/bipbop/gear1/prog_index.m3u8";
+"streamURL" = "http://ec2-50-18-141-53.us-west-1.compute.amazonaws.com:1935/live/radiostation.stream/playlist.m3u8";
